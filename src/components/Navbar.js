@@ -47,7 +47,7 @@ function Navbar({ location }) {
           <div className="navbar-start has-text-centered">
             <Link
               className={classNames("navbar-item", {
-                "is-active": location.pathname === '/',
+                "is-active": location && location.pathname === '/',
               })}
               to="/"
             >
