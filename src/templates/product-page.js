@@ -128,11 +128,11 @@ ProductPageTemplate.propTypes = {
   }),
 }
 
-const ProductPage = ({ data }) => {
+const ProductPage = ({ data, location }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout location={location}>
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
