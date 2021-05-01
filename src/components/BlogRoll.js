@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import moment from 'moment';
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import 'moment/locale/pl';
 
 class BlogRoll extends React.Component {
   render() {
@@ -38,7 +40,7 @@ class BlogRoll extends React.Component {
                     </Link>
                     <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
+                      {moment(post.frontmatter.date).format('D MMMM YYYY')}
                     </span>
                   </p>
                 </header>
@@ -84,7 +86,7 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
+                date
                 featuredpost
                 featuredimage {
                   childImageSharp {
