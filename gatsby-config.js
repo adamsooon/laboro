@@ -36,6 +36,13 @@ module.exports = {
         name: 'scripts',
       },
     },
+    {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/src/scripts`,
+        destination: '/scripts'
+      }
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
