@@ -15,7 +15,7 @@ export default function Contact() {
             Kontakt
           </h3>
           <div className="columns is-multiline">
-            <div className="is-parent column is-6">
+            <div className="is-parent column is-6 contact-logo-wrapper">
               <figure className="contact-logo">
                 <img src={domek} alt="Logo Little Sprouts" />
               </figure>

@@ -18,11 +18,14 @@
     padding-left: 60px
     border-left: 2px solid $white
 
-.contact-logo
+.contact-logo-wrapper
   display: none
-
   @include from($desktop)
     display: block
+
+
+.contact-logo
+  @include from($desktop)
     width: 280px
     padding-right: 48px
     margin-left: auto

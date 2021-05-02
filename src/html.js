@@ -21,8 +21,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js" />
-        <script src="/scripts/webFont.js" />
       </body>
     </html>
   );

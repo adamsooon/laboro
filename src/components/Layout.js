@@ -55,7 +55,6 @@ const TemplateWrapper = ({ children, location }) => {
       <div>{children}</div>
       <Contact />
       <Footer />
-      <div className="wf-active wf-inactive" />
     </div>
   );
 };
