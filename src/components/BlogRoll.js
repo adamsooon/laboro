@@ -33,12 +33,11 @@ class BlogRoll extends React.Component {
                   ) : null}
                   <p className="post-meta">
                     <Link
-                      className="title has-text-primary is-size-4"
+                      className="title has-text-primary is-size-4 is-block"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
                       {moment(post.frontmatter.date).format('D MMMM YYYY')}
                     </span>
