@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
+import Team from '../components/Team'
 import BlogRoll from '../components/BlogRoll'
 
 export const IndexPageTemplate = ({
@@ -64,7 +65,7 @@ export const IndexPageTemplate = ({
         </h3>
       </div>
     </div>
-    <section className="section section--gradient">
+    <section className="section section--gradient main-section">
       <div className="container">
         <div className="section">
           <div className="columns">
@@ -96,12 +97,12 @@ export const IndexPageTemplate = ({
                 </div>
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
-                    Latest stories
+                    Ostatnie posty
                   </h3>
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
-                      Read more
+                      Więcej
                     </Link>
                   </div>
                 </div>
@@ -111,6 +112,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
+    <Team />
   </div>
 )
 
