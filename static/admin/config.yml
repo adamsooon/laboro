@@ -29,7 +29,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"
-    label: "Pages"
+    label: "Strony"
     files:
       - file: "src/pages/index.md"
         label: "Landing Page"
@@ -51,6 +51,12 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/documents/index.md"
+        label: "Dokumenty"
+        name: "documents"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "documents-page"}
+          - {label: Lista dokumentów, name: documents-list, widget: object, fields: [{label: Dokumenty, name: documents, widget: list, fields: [{label: Plik, name: file, widget: file}, {label: Nazwa dokumentu, name: documentName, widget: text}]}]}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

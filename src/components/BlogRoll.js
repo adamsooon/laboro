@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import moment from 'moment';
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
-import 'moment/locale/pl';
+import React from "react";
+import PropTypes from "prop-types";
+import moment from "moment";
+import { Link, graphql, StaticQuery } from "gatsby";
+import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import "moment/locale/pl";
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
     return (
       <div className="columns is-multiline">
@@ -17,7 +17,7 @@ class BlogRoll extends React.Component {
             <div className="is-parent column is-6" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
+                  post.frontmatter.featuredpost ? "is-featured" : ""
                 }`}
               >
                 <header>
@@ -39,23 +39,19 @@ class BlogRoll extends React.Component {
                       {post.frontmatter.title}
                     </Link>
                     <span className="subtitle is-size-5 is-block">
-                      {moment(post.frontmatter.date).format('D MMMM YYYY')}
+                      {moment(post.frontmatter.date).format("D MMMM YYYY")}
                     </span>
                   </p>
                 </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+                <p>{post.excerpt}</p>
+                <Link className="button" to={post.fields.slug}>
+                  Czytaj dalej
+                </Link>
               </article>
             </div>
           ))}
       </div>
-    )
+    );
   }
 }
 
@@ -65,7 +61,7 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -102,4 +98,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-)
+);
