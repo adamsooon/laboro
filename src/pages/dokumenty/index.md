@@ -1,5 +1,8 @@
 ---
-documentsList:
-  - file: /img/135755845_2783976415209657_1121638877136207123_n.jpg
+templateKey: documents-page
+documents:
+  - file: /img/home-jumbotron.jpg
     documentName: testowy dokument
+  - file: /img/home-jumbotron.jpg
+    documentName: zdjęcie
 ---

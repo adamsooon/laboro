@@ -56,7 +56,7 @@ collections:
         name: "documents"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "documents-page"}
-          - {label: Lista dokumentów, name: documentsList, widget: list, fields: [{label: Plik, name: file, widget: file}, {label: Nazwa dokumentu, name: documentName, widget: text}]}
+          - {label: Lista dokumentów, name: documents, widget: list, fields: [{label: Plik, name: file, widget: file}, {label: Nazwa dokumentu, name: documentName, widget: text}]}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

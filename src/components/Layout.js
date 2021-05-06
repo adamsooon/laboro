@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
 import useSiteMetadata from "./SiteMetadata";
-import "./sass/all.sass";
+import "../sass/all.sass";
 
 const TemplateWrapper = ({ children, location }) => {
   const { title, description } = useSiteMetadata();

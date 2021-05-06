@@ -2,21 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import DocumentsList from "../components/DocumentsList";
 
-export const DocumentsPageTemplate = ({ content, contentComponent }) => {
-  const PageContent = contentComponent || Content;
 
+export function DocumentsPageTemplate({ documents }) {
   return (
-    <section className="section section--gradient">
+    <section className="section">
       <div className="container">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+          <div className="column is-12">
+            <div className="content">
+              <h1 className="has-text-weight-semibold is-size-2 has-text-centered">
                 Dokumenty
-              </h2>
-              <PageContent className="content" content={content} />
+              </h1>
+              <DocumentsList documents={documents} />
             </div>
           </div>
         </div>
@@ -26,27 +25,26 @@ export const DocumentsPageTemplate = ({ content, contentComponent }) => {
 };
 
 DocumentsPageTemplate.propTypes = {
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
+  documents: PropTypes.array.isRequired,
 };
 
-const DocumentsPage = ({ data, location }) => {
-  const { markdownRemark: post } = data;
-  console.log(data);
+function DocumentsPage({ data, location }) {
+  const {
+    markdownRemark: {
+      frontmatter: { documents },
+    },
+  } = data;
 
   return (
     <Layout location={location}>
-      <DocumentsPageTemplate
-        contentComponent={HTMLContent}
-        // title={post.frontmatter.title}
-        content={post.html}
-      />
+      <DocumentsPageTemplate documents={documents} />
     </Layout>
   );
 };
 
 DocumentsPage.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default DocumentsPage;
@@ -55,9 +53,9 @@ export const pageQuery = graphql`
   query DocumentsPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "documents-page" } }) {
       frontmatter {
-        documentsList {
+        documents {
           file {
-            id
+            publicURL
           }
           documentName
         }
