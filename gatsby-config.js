@@ -29,13 +29,13 @@ module.exports = {
         name: 'images',
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/scripts`,
-        name: 'scripts',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/scripts`,
+    //     name: 'scripts',
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-copy-files',
       options: {
