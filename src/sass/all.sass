@@ -157,6 +157,39 @@ body
   &:hover
     color: $link
 
+//cat animation
+
+@keyframes opacityOn
+  0%
+    opacity: 1
+
+  50%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes opacityOff
+  0%
+    opacity: 0
+
+  50%
+    opacity: 1
+
+  100%
+    opacity: 0
+
+.cat-mouth, .cat-eyes-closed, .meow, .cat-eyes
+  animation-duration: 2.5s
+  animation-iteration-count: infinite
+
+.cat-mouth, .cat-eyes, .meow
+  opacity: 0
+  animation-name: opacityOn
+
+.cat-eyes-closed
+  animation-name: opacityOff
+
 // helpers
 
 .custom-header

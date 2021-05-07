@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from "react";
 import classNames from "classnames";
 import { Link } from "gatsby";
+import { v4 } from 'uuid'
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
+import { navigationItems } from "../constants/navigationItems";
 
 function Navbar({ location }) {
   const [isActive, setActive] = useState(false);
@@ -45,29 +47,19 @@ function Navbar({ location }) {
           })}
         >
           <div className="navbar-start has-text-centered">
-            <Link
-              className={classNames("navbar-item", {
-                "is-active": location && location.pathname === '/',
-              })}
-              to="/"
-            >
-              Home
-            </Link>
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-            <Link className="navbar-item" to="/products">
-              Products
-            </Link>
-            <Link className="navbar-item" to="/blog">
-              Blog
-            </Link>
-            <Link className="navbar-item" to="/contact">
-              Contact
-            </Link>
-            <Link className="navbar-item" to="/contact/examples">
-              Form Examples
-            </Link>
+            {navigationItems
+              .filter((item) => item.isHeaderItem)
+              .map(({ name, path }) => (
+                <Link
+                  className={classNames("navbar-item", {
+                    "is-active": location?.pathname === path,
+                  })}
+                  to={path}
+                  key={v4()}
+                >
+                  {name}
+                </Link>
+              ))}
           </div>
           <div className="navbar-end has-text-centered">
             <a
