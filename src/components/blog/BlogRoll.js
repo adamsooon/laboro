@@ -55,27 +55,5 @@ export default class BlogRoll extends React.Component {
 }
 
 BlogRoll.propTypes = {
-  posts: PropTypes.array,
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
+  posts: PropTypes.object.isRequired
 };
-
-// export default () => (
-//   <StaticQuery
-//     query={graphql`
-//       query BlogRollQuery($limit: Int = 10) {
-//         allMarkdownRemark(
-//           sort: { order: DESC, fields: [frontmatter___date] }
-//           filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-//           limit: $limit
-//         ) {
-//           ...PostsList
-//         }
-//       }
-//     `}
-//     render={(data, count) => <BlogRoll data={data} count={count} />}
-//   />
-// );

@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import Layout from "../../components/Layout";
-import BlogRoll from "../../components/blog/BlogRoll";
+import Layout from "../components/Layout";
+import BlogRoll from "../components/blog/BlogRoll";
 
 export default function BlogIndexPage({ data, location }) {
   return (
@@ -41,11 +42,12 @@ BlogIndexPage.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query BlogIndexPage($limit: Int = 10) {
+  query BlogIndexPage($skip: Int!, $limit: Int = 10) {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
       limit: $limit
+      skip: $skip
     ) {
       ...PostsList
     }
