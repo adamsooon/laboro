@@ -1,19 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import { Link, graphql, StaticQuery } from "gatsby";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import { Link } from "gatsby";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 import "moment/locale/pl";
 
-class BlogRoll extends React.Component {
+export default class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { posts } = this.props;
 
     return (
       <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
+        {posts.edges &&
+          posts.edges.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
@@ -56,6 +55,7 @@ class BlogRoll extends React.Component {
 }
 
 BlogRoll.propTypes = {
+  posts: PropTypes.array,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -63,39 +63,19 @@ BlogRoll.propTypes = {
   }),
 };
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query BlogRollQuery {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-        ) {
-          edges {
-            node {
-              excerpt(pruneLength: 400)
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                templateKey
-                date
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
-  />
-);
+// export default () => (
+//   <StaticQuery
+//     query={graphql`
+//       query BlogRollQuery($limit: Int = 10) {
+//         allMarkdownRemark(
+//           sort: { order: DESC, fields: [frontmatter___date] }
+//           filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+//           limit: $limit
+//         ) {
+//           ...PostsList
+//         }
+//       }
+//     `}
+//     render={(data, count) => <BlogRoll data={data} count={count} />}
+//   />
+// );

@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Layout from "../../components/Layout";
-import BlogRoll from "../../components/BlogRoll";
+import BlogRoll from "../../components/blog/BlogRoll";
 
-export default function BlogIndexPage({ location }) {
+export default function BlogIndexPage({ data, location }) {
   return (
     <Layout location={location}>
       <div
@@ -27,10 +28,26 @@ export default function BlogIndexPage({ location }) {
       <section className="section">
         <div className="container">
           <div className="content">
-            <BlogRoll />
+            <BlogRoll posts={data.posts} />
           </div>
         </div>
       </section>
     </Layout>
   );
 }
+
+BlogIndexPage.propTypes = {
+  location: PropTypes.object,
+};
+
+export const pageQuery = graphql`
+  query BlogIndexPage($limit: Int = 10) {
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      limit: $limit
+    ) {
+      ...PostsList
+    }
+  }
+`;
