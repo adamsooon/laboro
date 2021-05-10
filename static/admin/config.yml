@@ -13,7 +13,7 @@ public_folder: /img
 locale: 'pl'
 
 collections:
-  - name: "Projekty"
+  - name: "projekty"
     label: "Projekty"
     folder: "src/pages/projekty"
     create: true
