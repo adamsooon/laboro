@@ -5,13 +5,6 @@ export const homePageNav = {
   isFooterItem: true,
 };
 
-export const blogPageNav = {
-  name: "Blog",
-  path: "/blog",
-  isHeaderItem: true,
-  isFooterItem: true,
-};
-
 export const projectsPageNav = {
   name: "Projekty",
   path: "/projekty",
@@ -32,7 +25,6 @@ export const contactsPageNav = {
 };
 export const navigationItems = [
   homePageNav,
-  blogPageNav,
   projectsPageNav,
   documentsPageNav,
   contactsPageNav,

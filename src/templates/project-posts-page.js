@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import BlogRoll from "../components/blog/BlogRoll";
+import BlogRoll from "../components/projects/BlogRoll";
 
-export default function BlogIndexPage({ data, location }) {
+export default function ProjectIndexPage({ data, location }) {
   return (
     <Layout location={location}>
       <div
@@ -37,7 +37,7 @@ export default function BlogIndexPage({ data, location }) {
   );
 }
 
-BlogIndexPage.propTypes = {
+ProjectIndexPage.propTypes = {
   location: PropTypes.object,
 };
 
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
   query BlogIndexPage($skip: Int!, $limit: Int = 10) {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "project-post" } } }
       limit: $limit
       skip: $skip
     ) {

@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
-import BlogRoll from "../components/blog/BlogRoll";
+import BlogRoll from "../components/projects/BlogRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -166,7 +166,7 @@ export const pageQuery = graphql`
   query IndexPageTemplate($limit: Int = 3) {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "project-post" } } }
       limit: $limit
     ) {
       ...PostsList

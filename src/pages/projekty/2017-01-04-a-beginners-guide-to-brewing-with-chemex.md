@@ -1,5 +1,5 @@
 ---
-templateKey: blog-post
+templateKey: project-post
 title: A beginners’ guide to brewing with Chemex
 date: 2017-01-05T16:04:10.000Z
 isProjectFinished: false
