@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
-  posts
+  posts,
 }) => (
   <div>
     <div
@@ -67,46 +67,50 @@ export const IndexPageTemplate = ({
     </div>
     <section className="section section--gradient main-section">
       <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="content">
               <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
+                <div className="tile">
+                  <h1 className="title">{mainpitch.title}</h1>
                 </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      Zobacz więcej
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
-                    Ostatnie posty
-                  </h3>
-                  <BlogRoll posts={posts} />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Zobacz więcej
-                    </Link>
-                  </div>
+                <div className="tile">
+                  <h3 className="subtitle">{mainpitch.description}</h3>
                 </div>
               </div>
+              <div className="columns">
+                <div className="column is-12">
+                  <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
+                    {heading}
+                  </h3>
+                  <p>{description}</p>
+                </div>
+              </div>
+              <Features gridItems={intro.blurbs} />
+              <div className="columns">
+                <div className="column is-12 has-text-centered">
+                  <Link className="btn" to="/products">
+                    Zobacz więcej
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section projects">
+      <div className="container">
+        <div className="column is-12">
+          <div className="content">
+            <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
+              Ostatnie dodane projekty
+            </h3>
+            <BlogRoll posts={posts} />
+            <div className="column is-12 has-text-centered">
+              <Link className="btn" to="/blog">
+                Zobacz więcej
+              </Link>
             </div>
           </div>
         </div>
@@ -159,7 +163,7 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate($limit: Int = 2) {
+  query IndexPageTemplate($limit: Int = 3) {
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }

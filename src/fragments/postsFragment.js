@@ -20,10 +20,10 @@ export const PostsFragment = graphql`
           title
           templateKey
           date
-          featuredpost
+          isProjectFinished
           featuredimage {
             childImageSharp {
-              fluid(maxWidth: 120, quality: 100) {
+              fluid(maxWidth: 435, maxHeight: 245, quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }

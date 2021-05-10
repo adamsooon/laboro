@@ -5,55 +5,47 @@ import { Link } from "gatsby";
 import PreviewCompatibleImage from "../PreviewCompatibleImage";
 import "moment/locale/pl";
 
-export default class BlogRoll extends React.Component {
-  render() {
-    const { posts } = this.props;
-
-    return (
-      <div className="columns is-multiline">
-        {posts.edges &&
-          posts.edges.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? "is-featured" : ""
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4 is-block"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span className="subtitle is-size-5 is-block">
-                      {moment(post.frontmatter.date).format("D MMMM YYYY")}
-                    </span>
-                  </p>
-                </header>
-                <p>{post.excerpt}</p>
-                <Link className="button" to={post.fields.slug}>
-                  Czytaj dalej
-                </Link>
-              </article>
+export default function BlogRoll({ posts }) {
+  return (
+    <ul className="columns is-mobile is-multiline projects-list">
+      {posts?.edges.map(({ node: post }) => (
+        <li
+          className="column is-half-mobile is-half-tablet is-4-widescreen projects-list-item"
+          key={post.id}
+        >
+          <Link
+            className="blog-list-item tile is-child box"
+            to={post.fields.slug}
+          >
+            <div className="featured-thumbnail">
+              {post.frontmatter.isProjectFinished && (
+                <span className="project-inactive-label">
+                  Projekt zakończony
+                </span>
+              )}
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.frontmatter.featuredimage,
+                  alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                }}
+              />
             </div>
-          ))}
-      </div>
-    );
-  }
+            <div className="project-excerpt">
+              <span className="project-date is-block">
+                {moment(post.frontmatter.date).format("D MMMM YYYY")}
+              </span>
+              <h2 className="subtitle is-size-5 is-block">
+                {post.frontmatter.title}
+              </h2>
+              <span className="btn project-btn">Czytaj</span>
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 BlogRoll.propTypes = {
-  posts: PropTypes.object.isRequired
+  posts: PropTypes.object.isRequired,
 };
