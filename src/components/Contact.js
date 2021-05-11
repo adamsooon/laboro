@@ -1,15 +1,14 @@
 import React from "react";
+import { StaticQuery } from "gatsby";
 import domek from "../img/contact/kontakt_domek.svg";
 import koperta from "../img/contact/kontakt_koperta.svg";
 import telefon from "../img/contact/kontakt_telefon.svg";
 
-export default function Contact() {
+function Contact({ data }) {
+  const { frontmatter: { contactData } } = data.markdownRemark;
   return (
     <>
-      <section
-        className="section contact"
-        id="kontakt"
-      >
+      <section className="section contact" id="kontakt">
         <div className="container">
           <h3 className="has-text-weight-semibold is-size-2 custom-header">
             Kontakt
@@ -30,7 +29,7 @@ export default function Contact() {
                       className="contact-icon"
                     />
                   </figure>
-                  <a href="tel:579634849">579 634 849</a>
+                  <a href={`tel:${contactData.phone}`}>{contactData.phone}</a>
                 </li>
                 <li className="contact-list-item mail">
                   <figure className="contact-icon-container">
@@ -41,11 +40,11 @@ export default function Contact() {
                     />
                   </figure>
                   <a
-                    href="mailto:laboro@poczta.fm"
+                    href={`mailto:${contactData.email}`}
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    laboro@poczta.fm
+                    {contactData.email}
                   </a>
                 </li>
                 <li className="contact-list-item">
@@ -56,7 +55,7 @@ export default function Contact() {
                       className="contact-icon"
                     />
                   </figure>
-                  <address>ul. Kolejowa 12b</address>
+                  <address>{contactData.address}</address>
                 </li>
               </ul>
             </div>
@@ -68,8 +67,27 @@ export default function Contact() {
         className="map"
         allowFullScreen
         loading="lazy"
-        title="Gdzie jesteśmy? Kolejowa 12b"
+        title={`Gdzie jesteśmy? ${contactData.address}`}
       />
     </>
   );
 }
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query ContactQuery {
+        markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+          frontmatter {
+            contactData {
+              address
+              email
+              phone
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Contact data={data} />}
+  />
+);

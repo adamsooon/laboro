@@ -19,7 +19,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-post"}
+      - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "project-post"}
       - {label: "Tytuł", name: "title", widget: "string"}
       - {label: "Data publikacji", name: "date", widget: "datetime"}
       - {label: "Opis", name: "description", widget: "text"}
@@ -34,7 +34,7 @@ collections:
         label: "Landing Page"
         name: "index"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
@@ -43,10 +43,11 @@ collections:
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
           - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - {label: Dane Kontaktowe, name: contactData, widget: object, fields: [{ label: Telefon, name: phone, widget: string }, { label: E-nail, name: email, widget: string }, { label: Adres, name: address, widget: string }]}
       - file: "src/pages/dokumenty/index.md"
         label: "Dokumenty"
         name: "documents"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "documents-page"}
+          - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "documents-page"}
           - {label: Dokumenty, name: documents, widget: list, fields: [{label: Plik, name: file, widget: file}, {label: Nazwa dokumentu, name: documentName, widget: text}]}
       

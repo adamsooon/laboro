@@ -67,4 +67,8 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+contactData:
+  phone: "579 634 849"
+  email: "laboro@poczta.fm"
+  address: "ul Kolejowa 12b"
 ---
