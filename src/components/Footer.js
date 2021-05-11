@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 } from "uuid";
 import chunk from "lodash/chunk";
-import NavItem from './NavItem'
+import NavItem from "./NavItem";
 import { navigationItems, FOOTER } from "../constants/navigationItems";
 
 import facebook from "../img/social/facebook.svg";
@@ -28,11 +28,13 @@ function Footer() {
                 </section>
               </div>
             ))}
-            <div className="column is-4 social">
+            <div className="column is-3 social">
               <section className="menu">
                 <a
                   title="facebook"
                   href="https://www.facebook.com/FundacjaLaboro"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={facebook}

@@ -7,7 +7,7 @@ import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
 export default function ProjectCard({ post }) {
   return (
-    <li className="column is-half-mobile is-half-tablet is-4-widescreen projects-list-item">
+    <li className="column is-full-mobile is-half-tablet is-4-widescreen projects-list-item">
       <Link className="blog-list-item tile is-child box" to={post.fields.slug}>
         <div className="featured-thumbnail">
           {post.frontmatter.isProjectFinished && (

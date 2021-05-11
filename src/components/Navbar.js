@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { Link } from "gatsby";
 import { v4 } from "uuid";
 import NavItem from "./NavItem";
-import github from "../img/github-icon.svg";
+import facebook from "../img/social/facebook.svg";
 import logo from "../img/logo.svg";
 import { navigationItems, NAVBAR } from "../constants/navigationItems";
 
@@ -57,12 +57,12 @@ function Navbar({ location }) {
           <div className="navbar-end has-text-centered">
             <a
               className="navbar-item"
-              href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+              href="https://www.facebook.com/FundacjaLaboro"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span className="icon">
-                <img src={github} alt="Github" />
+                <img src={facebook} alt="facebook" />
               </span>
             </a>
           </div>
