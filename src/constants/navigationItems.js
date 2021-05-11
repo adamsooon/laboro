@@ -1,37 +1,42 @@
+export const NAVBAR = "navbar";
+export const FOOTER = "footer";
+
 export const homePageNav = {
   name: "Strona główna",
   path: "/",
-  isHeaderItem: true,
-  isFooterItem: true,
+  destinations: [NAVBAR, FOOTER]
 };
 
 export const projectsPageNav = {
   name: "Projekty",
   path: "/projekty",
-  isHeaderItem: true,
-  isFooterItem: true,
+  destinations: [NAVBAR, FOOTER]
 };
 export const documentsPageNav = {
   name: "Dokumenty",
   path: "/dokumenty",
-  isHeaderItem: true,
-  isFooterItem: true,
+  destinations: [NAVBAR, FOOTER]
 };
 export const contactsPageNav = {
   name: "Kontakt",
   path: "/#kontakt",
-  isHeaderItem: true,
-  isFooterItem: true,
+  destinations: [NAVBAR, FOOTER],
+};
+export const privatePolicyNav = {
+  name: "Polityka Prywatności",
+  path: "/static/polityka_prywatnosci.pdf",
+  destinations: [FOOTER],
+  isStaticLink: true
 };
 export const navigationItems = [
   homePageNav,
   projectsPageNav,
   documentsPageNav,
   contactsPageNav,
-  {
-    name: "Produkty",
-    path: "/products",
-    isHeaderItem: true,
-    isFooterItem: true,
-  }
+  privatePolicyNav,
+  // {
+  //   name: "Produkty",
+  //   path: "/products",
+  //   destinations: [FOOTER],
+  // }
 ];

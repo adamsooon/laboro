@@ -70,5 +70,5 @@ main:
 contactData:
   phone: "579 634 849"
   email: "laboro@poczta.fm"
-  address: "ul Kolejowa 12b"
+  address: "Białystok, ul Kolejowa 12B/5 (I piętro)"
 ---

@@ -63,7 +63,7 @@ function Contact({ data }) {
         </div>
       </section>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2393.5682549570693!2d23.13707497771366!3d53.13589546918725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffc72b64354b3%3A0x5591111e8fbd8450!2sKolejowa%2012b%2C%2015-701%20Bia%C5%82ystok!5e0!3m2!1spl!2spl!4v1619784304275!5m2!1spl!2spl"
+        src={`https://maps.google.com/maps?q=${contactData.address}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
         className="map"
         allowFullScreen
         loading="lazy"

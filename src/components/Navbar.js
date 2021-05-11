@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { v4 } from 'uuid'
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
-import { navigationItems } from "../constants/navigationItems";
+import { navigationItems, NAVBAR } from "../constants/navigationItems";
 
 function Navbar({ location }) {
   const [isActive, setActive] = useState(false);
@@ -48,7 +48,7 @@ function Navbar({ location }) {
         >
           <div className="navbar-start has-text-centered">
             {navigationItems
-              .filter((item) => item.isHeaderItem)
+              .filter(({ destinations }) => destinations.includes(NAVBAR))
               .map(({ name, path }) => (
                 <Link
                   className={classNames("navbar-item", {
