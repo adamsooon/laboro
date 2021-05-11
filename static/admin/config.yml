@@ -49,5 +49,7 @@ collections:
         name: "documents"
         fields:
           - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "documents-page"}
+          - {label: Nagłówek, name: header, widget: string}
+          - {label: Zdjęcie, name: image, widget: image}
           - {label: Dokumenty, name: documents, widget: list, fields: [{label: Plik, name: file, widget: file}, {label: Nazwa dokumentu, name: documentName, widget: text}]}
       

@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
-import BlogRoll from "../components/projects/BlogRoll";
+import ProjectsRoll from "../components/projects/ProjectsRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
-  posts,
+  projects,
 }) => (
   <div>
     <div
@@ -40,9 +40,8 @@ export const IndexPageTemplate = ({
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
+            boxShadow: "#f4792b 0.5rem 0px 0px, #f4792b -0.5rem 0px 0px",
+            backgroundColor: "#f4792b",
             color: "white",
             lineHeight: "1",
             padding: "0.25em",
@@ -53,9 +52,8 @@ export const IndexPageTemplate = ({
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
-            boxShadow:
-              "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-            backgroundColor: "rgb(255, 68, 0)",
+            boxShadow: "#f4792b 0.5rem 0px 0px, #f4792b -0.5rem 0px 0px",
+            backgroundColor: "#f4792b",
             color: "white",
             lineHeight: "1",
             padding: "0.25em",
@@ -72,7 +70,9 @@ export const IndexPageTemplate = ({
             <div className="content">
               <div className="content">
                 <div className="tile">
-                  <h1 className="title">{mainpitch.title}</h1>
+                  <h1 className="has-text-weight-semibold is-size-3 has-text-centered">
+                    {mainpitch.title}
+                  </h1>
                 </div>
                 <div className="tile">
                   <h3 className="subtitle">{mainpitch.description}</h3>
@@ -104,11 +104,11 @@ export const IndexPageTemplate = ({
         <div className="column is-12">
           <div className="content">
             <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
-              Ostatnie dodane projekty
+              Ostatnio dodane projekty
             </h3>
-            <BlogRoll posts={posts} />
+            <ProjectsRoll projects={projects} />
             <div className="column is-12 has-text-centered">
-              <Link className="btn" to="/blog">
+              <Link className="btn" to="/projekty">
                 Zobacz więcej
               </Link>
             </div>
@@ -126,7 +126,7 @@ IndexPageTemplate.propTypes = {
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
-  posts: PropTypes.object,
+  projects: PropTypes.object,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -145,7 +145,7 @@ const IndexPage = ({ data, location }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-        posts={data.posts}
+        projects={data.projects}
       />
     </Layout>
   );
@@ -164,7 +164,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate($limit: Int = 3) {
-    posts: allMarkdownRemark(
+    projects: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { templateKey: { eq: "project-post" } } }
       limit: $limit

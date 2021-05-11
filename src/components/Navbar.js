@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from "react";
 import classNames from "classnames";
 import { Link } from "gatsby";
-import { v4 } from 'uuid'
+import { v4 } from "uuid";
+import NavItem from "./NavItem";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
 import { navigationItems, NAVBAR } from "../constants/navigationItems";
@@ -49,16 +50,8 @@ function Navbar({ location }) {
           <div className="navbar-start has-text-centered">
             {navigationItems
               .filter(({ destinations }) => destinations.includes(NAVBAR))
-              .map(({ name, path }) => (
-                <Link
-                  className={classNames("navbar-item", {
-                    "is-active": location?.pathname === path,
-                  })}
-                  to={path}
-                  key={v4()}
-                >
-                  {name}
-                </Link>
+              .map((item) => (
+                <NavItem item={item} location={location} key={v4()} />
               ))}
           </div>
           <div className="navbar-end has-text-centered">

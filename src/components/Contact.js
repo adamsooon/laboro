@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import domek from "../img/contact/kontakt_domek.svg";
 import koperta from "../img/contact/kontakt_koperta.svg";
 import telefon from "../img/contact/kontakt_telefon.svg";
