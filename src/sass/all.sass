@@ -103,15 +103,12 @@ $menu-label-color: $white-ter
 .social
   margin-top: 25px
   padding: 2em
-.social a
-  padding: .5em .5em .3em .5em
-  border-radius: 1em
-  background-color: $white-ter
-  margin: .5em
-  width: 1em
-  height: 1em
-  vertical-align: middle
-  display: inline
+.social-menu
+  display: flex
+.social-menu-like
+  height: 65px
+  max-width: 110px;
+  margin-left: auto
 
 @import "~bulma"
 
@@ -216,5 +213,13 @@ ul.projects-list
 .custom-header
   margin-bottom: 25px
   text-align: center
+
+.project-head
+  display: flex
+
+.project-share
+  width: 110px
+  height: 28px
+  margin-left: auto
 
 @import "./_contact"

@@ -14,9 +14,9 @@ export const ProjectPostTemplate = ({
   tags,
   title,
   helmet,
+  slug
 }) => {
   const PostContent = contentComponent || Content;
-  console.log(isProjectFinished);
 
   return (
     <section className="section">
@@ -24,7 +24,19 @@ export const ProjectPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            {isProjectFinished && <span className="tag is-medium">Projekt Zakończony</span>}
+            <div className="project-head">
+              {isProjectFinished && (
+                <span className="tag is-medium">Projekt Zakończony</span>
+              )}
+              <iframe
+                className="project-share"
+                src={`https://www.facebook.com/plugins/share_button.php?href=https://laboro.netlify.app/${slug}%2F&layout=button&size=large&width=77&height=28&appId`}
+                scrolling="no"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title="Udostępnij projekt na facebooku"
+              />
+            </div>
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -54,6 +66,7 @@ ProjectPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  slug: PropTypes.string,
   helmet: PropTypes.object,
   isProjectFinished: PropTypes.bool,
 };
@@ -79,6 +92,7 @@ const ProjectPost = ({ data, location }) => {
         isProjectFinished={post.frontmatter.isProjectFinished}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        slug={post.fields.slug}
       />
     </Layout>
   );
@@ -98,6 +112,9 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title

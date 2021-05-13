@@ -4,8 +4,6 @@ import chunk from "lodash/chunk";
 import NavItem from "./NavItem";
 import { navigationItems, FOOTER } from "../constants/navigationItems";
 
-import facebook from "../img/social/facebook.svg";
-
 function Footer() {
   return (
     <footer className="footer has-background-black has-text-white-ter">
@@ -29,19 +27,15 @@ function Footer() {
               </div>
             ))}
             <div className="column is-3 social">
-              <section className="menu">
-                <a
-                  title="facebook"
-                  href="https://www.facebook.com/FundacjaLaboro"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
+              <section className="social-menu">
+                <iframe
+                  className="social-menu-like"
+                  src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FFundacjaLaboro&width=72&layout=button&action=like&size=large&share=false&height=65&appId"
+                  scrolling="no"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title="Polub nas na facebooku"
+                />
               </section>
             </div>
           </div>

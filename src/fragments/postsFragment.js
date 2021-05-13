@@ -11,7 +11,6 @@ export const PostsFragment = graphql`
     }
     edges {
       node {
-        excerpt(pruneLength: 200)
         id
         fields {
           slug
