@@ -45,7 +45,7 @@ export function DocumentsPageTemplate({ documents, header, image }) {
 DocumentsPageTemplate.propTypes = {
   documents: PropTypes.array.isRequired,
   header: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
 };
 
 function DocumentsPage({ data, location }) {

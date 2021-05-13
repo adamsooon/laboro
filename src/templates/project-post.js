@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
 export const ProjectPostTemplate = ({
+  isProjectFinished,
   content,
   contentComponent,
   description,
@@ -15,6 +16,7 @@ export const ProjectPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
+  console.log(isProjectFinished);
 
   return (
     <section className="section">
@@ -22,6 +24,7 @@ export const ProjectPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+            {isProjectFinished && <span className="tag is-medium">Projekt Zakończony</span>}
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -52,6 +55,7 @@ ProjectPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  isProjectFinished: PropTypes.bool,
 };
 
 const ProjectPost = ({ data, location }) => {
@@ -72,6 +76,7 @@ const ProjectPost = ({ data, location }) => {
             />
           </Helmet>
         }
+        isProjectFinished={post.frontmatter.isProjectFinished}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -98,6 +103,7 @@ export const pageQuery = graphql`
         title
         description
         tags
+        isProjectFinished
       }
     }
   }

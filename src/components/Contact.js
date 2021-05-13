@@ -1,11 +1,26 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import domek from "../img/contact/kontakt_domek.svg";
 import koperta from "../img/contact/kontakt_koperta.svg";
 import telefon from "../img/contact/kontakt_telefon.svg";
 
-function Contact({ data }) {
-  const { frontmatter: { contactData } } = data.markdownRemark;
+export default function Contact() {
+  const data = useStaticQuery(graphql`
+    query ContactQuery {
+      markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+        frontmatter {
+          contactData {
+            address
+            email
+            phone
+          }
+        }
+      }
+    }
+  `);
+  const {
+    frontmatter: { contactData },
+  } = data.markdownRemark;
   return (
     <>
       <section className="section contact" id="kontakt">
@@ -72,22 +87,3 @@ function Contact({ data }) {
     </>
   );
 }
-
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query ContactQuery {
-        markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-          frontmatter {
-            contactData {
-              address
-              email
-              phone
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Contact data={data} />}
-  />
-);
