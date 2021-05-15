@@ -4,7 +4,7 @@ import chunk from "lodash/chunk";
 import NavItem from "./NavItem";
 import { navigationItems, FOOTER } from "../constants/navigationItems";
 
-function Footer() {
+function Footer({ facebookUrl }) {
   return (
     <footer className="footer has-background-black has-text-white-ter">
       <div className="content has-text-centered has-background-black has-text-white-ter">
@@ -30,7 +30,7 @@ function Footer() {
               <section className="social-menu">
                 <iframe
                   className="social-menu-like"
-                  src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FFundacjaLaboro&width=72&layout=button&action=like&size=large&share=false&height=65&appId"
+                  src={`https://www.facebook.com/plugins/like.php?href=${facebookUrl}&width=72&layout=button&action=like&size=large&share=false&height=65&appId`}
                   scrolling="no"
                   frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
@@ -8,6 +9,7 @@ import ProjectsRoll from "../components/projects/ProjectsRoll";
 export default function ProjectIndexPage({ data, location }) {
   return (
     <Layout location={location}>
+      <Helmet titleTemplate="%s | Realizowane projekty" />
       <div
         className="full-width-image-container margin-top-0"
         style={{
@@ -39,6 +41,7 @@ export default function ProjectIndexPage({ data, location }) {
 
 ProjectIndexPage.propTypes = {
   data: PropTypes.object,
+  helmet: PropTypes.object,
   location: PropTypes.object,
 };
 

@@ -1,12 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import DocumentsList from "../components/DocumentsList";
 
-export function DocumentsPageTemplate({ documents, header, image }) {
+export function DocumentsPageTemplate({ documents, header, helmet, image }) {
   return (
     <>
+      {helmet || ""}
       <header
         className="full-width-image-container margin-top-0"
         style={{
@@ -45,6 +47,7 @@ export function DocumentsPageTemplate({ documents, header, image }) {
 DocumentsPageTemplate.propTypes = {
   documents: PropTypes.array.isRequired,
   header: PropTypes.string.isRequired,
+  helmet: PropTypes.object,
   image: PropTypes.object.isRequired,
 };
 
@@ -61,6 +64,9 @@ function DocumentsPage({ data, location }) {
         documents={documents}
         image={image}
         header={header}
+        helmet={
+          <Helmet titleTemplate="%s | Dokumenty do pobrania" />
+        }
       />
     </Layout>
   );

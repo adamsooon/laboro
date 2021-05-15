@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import useSiteMetadata from "../components/SiteMetadata";
 
 export const ProjectPostTemplate = ({
   isProjectFinished,
@@ -17,6 +18,7 @@ export const ProjectPostTemplate = ({
   slug
 }) => {
   const PostContent = contentComponent || Content;
+  const { domain } = useSiteMetadata();
 
   return (
     <section className="section">
@@ -30,7 +32,7 @@ export const ProjectPostTemplate = ({
               )}
               <iframe
                 className="project-share"
-                src={`https://www.facebook.com/plugins/share_button.php?href=https://laboro.netlify.app/${slug}%2F&layout=button&size=large&width=77&height=28&appId`}
+                src={`https://www.facebook.com/plugins/share_button.php?href=${domain}${slug}%2F&layout=button&size=large&width=77&height=28&appId`}
                 scrolling="no"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -81,7 +83,7 @@ const ProjectPost = ({ data, location }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet>
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"

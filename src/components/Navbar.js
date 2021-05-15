@@ -7,7 +7,7 @@ import facebook from "../img/social/facebook.svg";
 import logo from "../img/logo.svg";
 import { navigationItems, NAVBAR } from "../constants/navigationItems";
 
-function Navbar({ location }) {
+function Navbar({ facebookUrl, location }) {
   const [isActive, setActive] = useState(false);
 
   const toggleHamburger = useCallback(() => {
@@ -57,7 +57,7 @@ function Navbar({ location }) {
           <div className="navbar-end has-text-centered">
             <a
               className="navbar-item"
-              href="https://www.facebook.com/FundacjaLaboro"
+              href={facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -8,7 +8,7 @@ import useSiteMetadata from "./SiteMetadata";
 import "../sass/all.sass";
 
 const TemplateWrapper = ({ children, location }) => {
-  const { title, description } = useSiteMetadata();
+  const { title, description, facebookUrl } = useSiteMetadata();
 
   return (
     <div>
@@ -51,10 +51,10 @@ const TemplateWrapper = ({ children, location }) => {
         />
       </Helmet>
 
-      <Navbar location={location} />
+      <Navbar location={location} facebookUrl={facebookUrl} />
       <div>{children}</div>
       <Contact />
-      <Footer />
+      <Footer facebookUrl={facebookUrl} />
     </div>
   );
 };

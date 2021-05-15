@@ -105,12 +105,15 @@ $menu-label-color: $white-ter
   padding: 2em
 .social-menu
   display: flex
-.social-menu-like
-  height: 65px
-  max-width: 110px;
-  margin-left: auto
 
 @import "~bulma"
+
+.social-menu-like
+  height: 65px
+  max-width: 110px
+  margin-left: 32px
+  @include from($tablet)
+    margin-left: auto
 
 // blog roll
 .blog-list-item
