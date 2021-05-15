@@ -3,8 +3,8 @@ templateKey: documents-page
 header: Dokumenty
 image: /img/documents-bg.jpg
 documents:
-  - file: /img/home-jumbotron.jpg
+  - file: /img/header.jpg
     documentName: testowy dokument
-  - file: /img/home-jumbotron.jpg
+  - file: /img/header.jpg
     documentName: zdjęcie
 ---

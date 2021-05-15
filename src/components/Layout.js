@@ -8,7 +8,7 @@ import useSiteMetadata from "./SiteMetadata";
 import "../sass/all.sass";
 
 const TemplateWrapper = ({ children, location }) => {
-  const { title, description, facebookUrl } = useSiteMetadata();
+  const { title, description, facebookUrl, domain } = useSiteMetadata();
 
   return (
     <div>
@@ -40,11 +40,12 @@ const TemplateWrapper = ({ children, location }) => {
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
           color="#ff4400"
         />
-        <meta name="theme-color" content="#fff" />
+        <meta name="theme-color" content="#f4792b" />
 
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
+        <meta property="og:url" content={domain} />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
         <meta
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}

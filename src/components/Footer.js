@@ -33,7 +33,7 @@ function Footer({ facebookUrl }) {
                   src={`https://www.facebook.com/plugins/like.php?href=${facebookUrl}&width=72&layout=button&action=like&size=large&share=false&height=65&appId`}
                   scrolling="no"
                   frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
                   title="Polub nas na facebooku"
                 />
               </section>

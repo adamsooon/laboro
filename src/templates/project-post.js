@@ -15,10 +15,9 @@ export const ProjectPostTemplate = ({
   tags,
   title,
   helmet,
-  slug
+  postUrl
 }) => {
   const PostContent = contentComponent || Content;
-  const { domain } = useSiteMetadata();
 
   return (
     <section className="section">
@@ -32,10 +31,10 @@ export const ProjectPostTemplate = ({
               )}
               <iframe
                 className="project-share"
-                src={`https://www.facebook.com/plugins/share_button.php?href=${domain}${slug}%2F&layout=button&size=large&width=77&height=28&appId`}
+                src={`https://www.facebook.com/plugins/share_button.php?href=${postUrl}%2F&layout=button&size=large&width=77&height=28&appId`}
                 scrolling="no"
                 frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture;"
                 title="Udostępnij projekt na facebooku"
               />
             </div>
@@ -68,12 +67,13 @@ ProjectPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  slug: PropTypes.string,
+  postUrl: PropTypes.string,
   helmet: PropTypes.object,
   isProjectFinished: PropTypes.bool,
 };
 
 const ProjectPost = ({ data, location }) => {
+  const { domain } = useSiteMetadata();
   const { markdownRemark: post } = data;
 
   return (
@@ -94,7 +94,7 @@ const ProjectPost = ({ data, location }) => {
         isProjectFinished={post.frontmatter.isProjectFinished}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        slug={post.fields.slug}
+        postUrl={`${domain}${post.fields.slug}`}
       />
     </Layout>
   );

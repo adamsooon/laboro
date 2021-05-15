@@ -3,17 +3,13 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
+// import Features from "../components/Features";
 import ProjectsRoll from "../components/projects/ProjectsRoll";
 
 export const IndexPageTemplate = ({
   image,
   title,
-  heading,
-  subheading,
   mainpitch,
-  description,
-  intro,
   projects,
 }) => (
   <div>
@@ -23,7 +19,7 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `top left`,
+        backgroundPosition: `0 -20px`,
         backgroundAttachment: `fixed`,
       }}
     >
@@ -40,7 +36,6 @@ export const IndexPageTemplate = ({
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
           style={{
-            boxShadow: "#f4792b 0.5rem 0px 0px, #f4792b -0.5rem 0px 0px",
             backgroundColor: "#f4792b",
             color: "white",
             lineHeight: "1",
@@ -51,46 +46,39 @@ export const IndexPageTemplate = ({
         </h1>
       </div>
     </div>
-    <section className="section section--gradient main-section">
+    <section className="section main-section">
       <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="content">
-              <div className="content">
-                <div className="tile">
-                  <h1 className="has-text-weight-semibold is-size-3 has-text-centered">
-                    {mainpitch.title}
-                  </h1>
-                </div>
-                <div className="tile">
-                  <h3 className="subtitle">{mainpitch.description}</h3>
-                </div>
-              </div>
-              <div className="columns">
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
-                    {heading}
-                  </h3>
-                  <p>{description}</p>
-                </div>
-              </div>
-              <Features gridItems={intro.blurbs} />
-              <div className="columns">
-                <div className="column is-12 has-text-centered">
-                  <Link className="btn" to="/products">
-                    Zobacz więcej
-                  </Link>
-                </div>
-              </div>
+        <div className="column is-12">
+          <div className="content">
+            <h1 className="has-text-weight-semibold is-size-2 has-text-centered">
+              {mainpitch.title}
+            </h1>
+            <div className="tile">
+              <p className="short-description">{mainpitch.description}</p>
             </div>
+          </div>
+          <div className="column is-12 has-text-centered">
+            <Link className="btn" to="/projekty">
+              Zobacz więcej o nas
+            </Link>
           </div>
         </div>
       </div>
     </section>
+    {/* <Features gridItems={intro.blurbs} /> */}
     <section className="section projects">
       <div className="container">
         <div className="column is-12">
           <div className="content">
+            <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
+              Najnowsze aktualności
+            </h3>
+            <ProjectsRoll projects={projects} />
+            <div className="column is-12 has-text-centered">
+              <Link className="btn" to="/projekty">
+                Zobacz więcej
+              </Link>
+            </div>
             <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
               Ostatnio dodane projekty
             </h3>
@@ -111,7 +99,6 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   projects: PropTypes.object,
@@ -128,8 +115,6 @@ const IndexPage = ({ data, location }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -169,27 +154,11 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
-        subheading
         mainpitch {
           title
           description
         }
         description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
       }
     }
   }

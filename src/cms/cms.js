@@ -28,4 +28,4 @@ CMS.registerMediaLibrary(cloudinary);
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("documents", DocumentsPagePreview);
 CMS.registerPreviewTemplate("products", ProductPagePreview);
-CMS.registerPreviewTemplate("blog", ProjectPostPreview);
+CMS.registerPreviewTemplate("project", ProjectPostPreview);
