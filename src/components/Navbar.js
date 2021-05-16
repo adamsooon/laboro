@@ -22,7 +22,7 @@ function Navbar({ facebookUrl, location }) {
     >
       <div className="container">
         <div className="navbar-brand">
-          <Link to="/" className="navbar-item" title="Logo">
+          <Link to="/" className="navbar-item" title="Logo Fundacji Laboro">
             <img src={logo} alt="Fundacja Laboro" className="navbar-item-logo" />
           </Link>
           {/* Hamburger menu */}

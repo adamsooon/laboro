@@ -7,6 +7,12 @@ export const homePageNav = {
   destinations: [NAVBAR, FOOTER]
 };
 
+export const aboutPageNav = {
+  name: "O nas",
+  path: "/o-nas",
+  destinations: [NAVBAR, FOOTER]
+};
+
 export const projectsPageNav = {
   name: "Projekty",
   path: "/projekty",
@@ -30,6 +36,7 @@ export const privatePolicyNav = {
 };
 export const navigationItems = [
   homePageNav,
+  aboutPageNav,
   projectsPageNav,
   documentsPageNav,
   contactsPageNav,

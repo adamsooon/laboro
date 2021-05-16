@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({ image, title, mainpitch, projects }) => (
             </div>
           </div>
           <div className="column is-12 has-text-centered">
-            <Link className="btn" to="/projekty">
+            <Link className="btn" to="/o-nas">
               Zobacz więcej o nas
             </Link>
           </div>
