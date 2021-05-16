@@ -20,7 +20,7 @@ export const ProductPageTemplate = ({
 }) => (
   <div className="content">
     <div
-      className="full-width-image-container margin-top-0"
+      className="full-width-image margin-top-0"
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
@@ -82,7 +82,7 @@ export const ProductPageTemplate = ({
               </div>
               <Testimonials testimonials={testimonials} />
               <div
-                className="full-width-image-container"
+                className="full-width-image"
                 style={{
                   backgroundImage: `url(${
                     fullImage.childImageSharp

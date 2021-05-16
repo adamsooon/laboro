@@ -3,49 +3,13 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
+import Header from "../components/Header"
 // import Features from "../components/Features";
 import ProjectsRoll from "../components/projects/ProjectsRoll";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  mainpitch,
-  projects,
-}) => (
+export const IndexPageTemplate = ({ image, title, mainpitch, projects }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `0 -20px`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          height: "150px",
-          lineHeight: "1",
-          justifyContent: "space-around",
-          alignItems: "left",
-          flexDirection: "column",
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            backgroundColor: "#f4792b",
-            color: "white",
-            lineHeight: "1",
-            padding: "0.25em",
-          }}
-        >
-          {title}
-        </h1>
-      </div>
-    </div>
+    <Header image={image} title={title} isFixed />
     <section className="section main-section">
       <div className="container">
         <div className="column is-12">

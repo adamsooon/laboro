@@ -18,7 +18,7 @@ function Navbar({ facebookUrl, location }) {
     <nav
       className="navbar is-transparent"
       role="navigation"
-      aria-label="main-navigation"
+      aria-label="główna nawigacja"
     >
       <div className="container">
         <div className="navbar-brand">
