@@ -53,7 +53,7 @@ const TemplateWrapper = ({ children, location }) => {
       </Helmet>
 
       <Navbar location={location} facebookUrl={facebookUrl} />
-      <div>{children}</div>
+      <div className="app">{children}</div>
       <Contact />
       <Footer facebookUrl={facebookUrl} />
     </div>
