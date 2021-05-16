@@ -11,7 +11,7 @@ export default function ProjectIndexPage({ data, location }) {
   return (
     <Layout location={location}>
       <Helmet titleTemplate="%s | Realizowane projekty" />
-      <Header image="img/projects-bg.jpg" title="Projekty" />
+      <Header image="img/projects-bg.webp" title="Projekty" />
       <section className="section">
         <div className="container">
           <div className="content">

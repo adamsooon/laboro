@@ -22,8 +22,8 @@ export const PostsFragment = graphql`
           isProjectFinished
           featuredimage {
             childImageSharp {
-              fluid(maxWidth: 435, maxHeight: 245, quality: 90) {
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 435, maxHeight: 245, quality: 90, toFormat: WEBP) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
