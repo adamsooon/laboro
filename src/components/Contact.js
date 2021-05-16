@@ -1,5 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import logo from "../img/logo-white.svg";
 import domek from "../img/contact/kontakt_domek.svg";
 import koperta from "../img/contact/kontakt_koperta.svg";
 import telefon from "../img/contact/kontakt_telefon.svg";
@@ -31,7 +32,7 @@ export default function Contact() {
           <div className="columns is-multiline">
             <div className="is-parent column is-6 contact-logo-wrapper">
               <figure className="contact-logo">
-                <img src={domek} alt="Logo Little Sprouts" />
+                <img src={logo} alt="Logo Fundacji Laboro" />
               </figure>
             </div>
             <div className="is-parent column is-6">
