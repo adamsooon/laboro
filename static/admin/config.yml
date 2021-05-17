@@ -51,4 +51,11 @@ collections:
           - {label: Nagłówek, name: header, widget: string}
           - {label: Zdjęcie, name: image, widget: image}
           - {label: Dokumenty, name: documents, widget: list, fields: [{label: Plik, name: file, widget: file}, {label: Nazwa dokumentu, name: documentName, widget: text}]}
+      - file: "src/pages/o-nas/index.md"
+        label: "O nas"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
       

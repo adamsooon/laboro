@@ -10,7 +10,7 @@ export default function Header({ image, isFixed, title }) {
       })}
       style={{
         backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.srcWebp : image
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
       }}
     >
