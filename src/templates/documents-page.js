@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Header from "../components/Header"
+import Header from "../components/Header";
 import DocumentsList from "../components/DocumentsList";
 
 export function DocumentsPageTemplate({ documents, header, helmet, image }) {
@@ -46,9 +46,7 @@ function DocumentsPage({ data, location }) {
         documents={documents}
         image={image}
         header={header}
-        helmet={
-          <Helmet titleTemplate="%s | Dokumenty do pobrania" />
-        }
+        helmet={<Helmet titleTemplate="%s | Dokumenty do pobrania" />}
       />
     </Layout>
   );

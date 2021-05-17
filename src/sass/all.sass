@@ -99,6 +99,9 @@ $menu-label-color: $white-ter
     @include from($tablet)
       background-attachment: fixed
       background-position: 0 -20px
+      &::after,
+      &::before
+        background-attachment: fixed
 
 .btn
   display: inline-block
