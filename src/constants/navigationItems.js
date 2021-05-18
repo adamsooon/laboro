@@ -18,25 +18,36 @@ export const projectsPageNav = {
   path: "/projekty",
   destinations: [NAVBAR, FOOTER]
 };
+
+export const newsPageNav = {
+  name: "Aktualności",
+  path: "/aktualnosci",
+  destinations: [NAVBAR, FOOTER]
+};
+
 export const documentsPageNav = {
   name: "Dokumenty",
   path: "/dokumenty",
   destinations: [NAVBAR, FOOTER]
 };
+
 export const contactsPageNav = {
   name: "Kontakt",
   path: "/#kontakt",
   destinations: [NAVBAR, FOOTER],
 };
+
 export const privatePolicyNav = {
   name: "Polityka Prywatności",
   path: "/static/polityka_prywatnosci.pdf",
   destinations: [FOOTER],
   isStaticLink: true
 };
+
 export const navigationItems = [
   homePageNav,
   aboutPageNav,
+  newsPageNav,
   projectsPageNav,
   documentsPageNav,
   contactsPageNav,

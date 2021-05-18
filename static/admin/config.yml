@@ -27,6 +27,19 @@ collections:
       - {label: "Wyróżniony obraz", name: "featuredimage", widget: image, default: '/img/paper.jpg'}
       - {label: "Treść", name: "body", widget: "markdown"}
       - {label: "Tagi", name: "tags", widget: "list"}
+  - name: "aktualnosci"
+    label: "Aktualności"
+    folder: "src/pages/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "news-post"}
+      - {label: "Tytuł", name: "title", widget: "string"}
+      - {label: "Data publikacji", name: "date", widget: "datetime"}
+      - {label: "Opis", name: "description", widget: "text"}
+      - {label: "Wyróżniony obraz", name: "featuredimage", widget: image, default: '/img/paper.jpg'}
+      - {label: "Treść", name: "body", widget: "markdown"}
+      - {label: "Tagi", name: "tags", widget: "list"}
   - name: "pages"
     label: "Strony"
     files:

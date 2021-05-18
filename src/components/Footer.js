@@ -14,7 +14,7 @@ function Footer({ facebookUrl }) {
               navigationItems.filter(({ destinations }) =>
                 destinations.includes(FOOTER)
               ),
-              2
+              3
             ).map((group) => (
               <div className="column is-3" key={v4()}>
                 <section className="menu">

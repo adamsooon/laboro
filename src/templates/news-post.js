@@ -7,7 +7,7 @@ import SinglePostTemplate from "../components/posts/SinglePostTemplate";
 import { HTMLContent } from "../components/Content";
 import useSiteMetadata from "../components/SiteMetadata";
 
-const ProjectPost = ({ data, location }) => {
+const NewsPost = ({ data, location }) => {
   const { domain } = useSiteMetadata();
   const { markdownRemark: post } = data;
 
@@ -35,17 +35,17 @@ const ProjectPost = ({ data, location }) => {
   );
 };
 
-ProjectPost.propTypes = {
+NewsPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
   location: PropTypes.object,
 };
 
-export default ProjectPost;
+export default NewsPost;
 
 export const pageQuery = graphql`
-  query ProjectPostByID($id: String!) {
+  query NewsPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -57,7 +57,6 @@ export const pageQuery = graphql`
         title
         description
         tags
-        isProjectFinished
       }
     }
   }

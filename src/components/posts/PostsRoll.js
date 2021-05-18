@@ -1,18 +1,18 @@
 import React from "react";
 import { v4 } from "uuid";
 import PropTypes from "prop-types";
-import ProjectCard from './ProjectCard';
+import PostCard from './PostCard';
 
-export default function ProjectsRoll({ projects }) {
+export default function PostsRoll({ projects }) {
   return (
     <ul className="columns is-mobile is-multiline projects-list">
       {projects?.edges.map(({ node: post }) => (
-        <ProjectCard post={post} key={v4()} />
+        <PostCard post={post} key={v4()} />
       ))}
     </ul>
   );
 }
 
-ProjectsRoll.propTypes = {
+PostsRoll.propTypes = {
   projects: PropTypes.object.isRequired,
 };

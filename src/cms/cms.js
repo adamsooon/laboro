@@ -4,7 +4,7 @@ import uploadcare from "netlify-cms-media-library-uploadcare";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 
 import DocumentsPagePreview from "./preview-templates/DocumentsPagePreview";
-import ProjectPostPreview from "./preview-templates/ProjectPostPreview";
+import PostPreview from "./preview-templates/PostPreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
 import AboutPagePreview from "./preview-templates/AboutPagePreview";
 import moment from 'moment';
@@ -27,5 +27,6 @@ CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("documents", DocumentsPagePreview);
-CMS.registerPreviewTemplate("project", ProjectPostPreview);
+CMS.registerPreviewTemplate("project", PostPreview);
+CMS.registerPreviewTemplate("news", PostPreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);

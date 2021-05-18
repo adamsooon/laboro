@@ -1,25 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ProjectPostTemplate } from '../../templates/project-post'
+import SinglePostTemplate from "../../components/posts/SinglePostTemplate";
 
-const ProjectPostPreview = ({ entry, widgetFor }) => {
+const PostPreview = ({ entry, widgetFor }) => {
   const tags = entry.getIn(['data', 'tags'])
   return (
-    <ProjectPostTemplate
+    <SinglePostTemplate
       content={widgetFor('body')}
       description={entry.getIn(['data', 'description'])}
       tags={tags && tags.toJS()}
       title={entry.getIn(['data', 'title'])}
-      isProjectFinished={entry.getIn(['data', 'isProjectFinished'])}
+      isProjectFinished={entry.getIn(['data', 'isProjectFinished'], false)}
     />
   )
 }
 
-ProjectPostPreview.propTypes = {
+PostPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default ProjectPostPreview
+export default PostPreview

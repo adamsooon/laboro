@@ -60,6 +60,18 @@ exports.createPages = ({ actions, graphql }) => {
         },
       });
     });
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/aktualnosci` : `/aktualnosci/${i + 1}`,
+        component: path.resolve("./src/templates/news-posts-page.js"),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      });
+    });
 
     // Tag pages:
     let tags = [];

@@ -5,9 +5,9 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Header from "../components/Header"
 // import Features from "../components/Features";
-import ProjectsRoll from "../components/projects/ProjectsRoll";
+import PostRoll from "../components/posts/PostsRoll";
 
-export const IndexPageTemplate = ({ image, title, mainpitch, projects }) => (
+export const IndexPageTemplate = ({ image, title, mainpitch, news, projects }) => (
   <div>
     <Header image={image} title={title} isFixed />
     <section className="section main-section">
@@ -37,16 +37,16 @@ export const IndexPageTemplate = ({ image, title, mainpitch, projects }) => (
             <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
               Najnowsze aktualności
             </h3>
-            <ProjectsRoll projects={projects} />
+            <PostRoll projects={news} />
             <div className="column is-12 has-text-centered">
-              <Link className="btn" to="/projekty">
+              <Link className="btn" to="/aktualnosci">
                 Zobacz więcej
               </Link>
             </div>
             <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
               Ostatnio dodane projekty
             </h3>
-            <ProjectsRoll projects={projects} />
+            <PostRoll projects={projects} />
             <div className="column is-12 has-text-centered">
               <Link className="btn" to="/projekty">
                 Zobacz więcej
@@ -66,6 +66,7 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   projects: PropTypes.object,
+  news: PropTypes.object,
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
@@ -83,6 +84,7 @@ const IndexPage = ({ data, location }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         projects={data.projects}
+        news={data.news}
       />
     </Layout>
   );
@@ -108,12 +110,19 @@ export const pageQuery = graphql`
     ) {
       ...PostsList
     }
+    news: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "news-post" } } }
+      limit: $limit
+    ) {
+      ...PostsList
+    }
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
         image {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 2048, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
