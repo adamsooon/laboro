@@ -3,11 +3,17 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Header from "../components/Header"
+import Header from "../components/Header";
 // import Features from "../components/Features";
 import PostRoll from "../components/posts/PostsRoll";
 
-export const IndexPageTemplate = ({ image, title, mainpitch, news, projects }) => (
+export const IndexPageTemplate = ({
+  image,
+  title,
+  mainpitch,
+  news,
+  projects,
+}) => (
   <div>
     <Header image={image} title={title} isFixed />
     <section className="section main-section">
@@ -22,7 +28,11 @@ export const IndexPageTemplate = ({ image, title, mainpitch, news, projects }) =
             </div>
           </div>
           <div className="column is-12 has-text-centered">
-            <Link className="btn" to="/o-nas">
+            <Link
+              className="btn"
+              to="/o-nas"
+              aria-label="Zobacz więcej informacji o nas"
+            >
               Zobacz więcej o nas
             </Link>
           </div>
@@ -39,7 +49,11 @@ export const IndexPageTemplate = ({ image, title, mainpitch, news, projects }) =
             </h3>
             <PostRoll projects={news} />
             <div className="column is-12 has-text-centered">
-              <Link className="btn" to="/aktualnosci">
+              <Link
+                className="btn"
+                to="/aktualnosci"
+                aria-label="Zobacz więcej aktualności"
+              >
                 Zobacz więcej
               </Link>
             </div>
@@ -48,7 +62,11 @@ export const IndexPageTemplate = ({ image, title, mainpitch, news, projects }) =
             </h3>
             <PostRoll projects={projects} />
             <div className="column is-12 has-text-centered">
-              <Link className="btn" to="/projekty">
+              <Link
+                className="btn"
+                to="/projekty"
+                aria-label="Zobacz więcej realizowanych projektów"
+              >
                 Zobacz więcej
               </Link>
             </div>

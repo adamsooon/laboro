@@ -3,9 +3,15 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import PostsPage from "../components/posts/PostsPage";
 
-export default function ProjectIndexPage({ data, location }) {
+export default function ProjectIndexPage({ data, location, pageContext }) {
+  console.log(pageContext);
   return (
-    <PostsPage title="Realizowane Projekty" data={data} location={location} />
+    <PostsPage
+      title="Realizowane Projekty"
+      data={data}
+      location={location}
+      paginationData={pageContext}
+    />
   );
 }
 

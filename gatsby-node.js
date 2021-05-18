@@ -30,6 +30,8 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges;
+    const projects = posts.filter(post => post.node.frontmatter.templateKey === 'project-post');
+    const news = posts.filter(post => post.node.frontmatter.templateKey === 'news-post');
 
     posts.forEach((edge) => {
       const id = edge.node.id;
@@ -47,28 +49,32 @@ exports.createPages = ({ actions, graphql }) => {
     });
 
     const postsPerPage = 6;
-    const numPages = Math.ceil(posts.length / postsPerPage);
-    Array.from({ length: numPages }).forEach((_, i) => {
+    const projectsNumPages = Math.ceil(projects.length / postsPerPage);
+    const newsNumPages = Math.ceil(news.length / postsPerPage);
+    
+    Array.from({ length: projectsNumPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/projekty` : `/projekty/${i + 1}`,
         component: path.resolve("./src/templates/project-posts-page.js"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
-          numPages,
+          numPages: projectsNumPages,
           currentPage: i + 1,
+          slug: 'projekty'
         },
       });
     });
-    Array.from({ length: numPages }).forEach((_, i) => {
+    Array.from({ length: newsNumPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/aktualnosci` : `/aktualnosci/${i + 1}`,
         component: path.resolve("./src/templates/news-posts-page.js"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
-          numPages,
+          numPages: newsNumPages,
           currentPage: i + 1,
+          slug: 'aktualnosci'
         },
       });
     });

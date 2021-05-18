@@ -5,8 +5,9 @@ import { Helmet } from "react-helmet";
 import Layout from "../Layout";
 import Header from "../Header";
 import PostsRoll from "./PostsRoll";
+import Pagination from "./Pagination";
 
-export default function PostsPage({ data, location, title }) {
+export default function PostsPage({ data, location, title, paginationData }) {
   return (
     <Layout location={location}>
       <Helmet titleTemplate={`%s | ${title}`} />
@@ -15,6 +16,7 @@ export default function PostsPage({ data, location, title }) {
         <div className="container">
           <div className="content">
             <PostsRoll projects={data.projects} />
+            <Pagination paginationData={paginationData} />
           </div>
         </div>
       </section>
