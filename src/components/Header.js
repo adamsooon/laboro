@@ -10,7 +10,6 @@ export default function Header({ image, isFixed, title, style }) {
       className={classNames("full-width-image", {
         "is-fixed": isFixed,
       })}
-      style={{ backgroundPositionX: "0", backgroundPositionY: "-100px" }}
       fluid={!!image.childImageSharp ? image.childImageSharp.fluid : image}
     >
       <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen header-title">

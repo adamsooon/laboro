@@ -94,6 +94,11 @@ $menu-label-color: $white-ter
   display: flex
   justify-content: center
   align-items: center
+  &::before,
+  &::after
+    @include from($tablet)
+      background-position-x: 0 !important
+      background-position-y: -100px !important
 
   &.is-fixed
     @include from($tablet)
@@ -119,9 +124,7 @@ $menu-label-color: $white-ter
   &:hover
     color: #fff
     background-color: #f4792b
-
-.margin-top-0
-  margin-top: 0 !important
+    
 // blog roll
 .blog-list-item
   display: flex
