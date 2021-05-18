@@ -27,9 +27,9 @@ collections:
       - {label: "Wyróżniony obraz", name: "featuredimage", widget: image, default: '/img/paper.jpg'}
       - {label: "Treść", name: "body", widget: "markdown"}
       - {label: "Tagi", name: "tags", widget: "list"}
-  - name: "aktualnosci"
+  - name: "news"
     label: "Aktualności"
-    folder: "src/pages/news"
+    folder: "src/pages/aktualnosci"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
