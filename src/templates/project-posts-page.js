@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import PostsPage from "../components/posts/PostsPage";
 
 export default function ProjectIndexPage({ data, location, pageContext }) {
-  console.log(pageContext);
   return (
     <PostsPage
       title="Realizowane Projekty"
@@ -21,7 +20,7 @@ ProjectIndexPage.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query ProjectIndexPage($skip: Int!, $limit: Int = 10) {
+  query ProjectIndexPage($skip: Int!, $limit: Int!) {
     image: file(relativePath: { eq: "projects-bg.webp" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1280) {

@@ -3,6 +3,7 @@ import { pl } from "netlify-cms-locales";
 import uploadcare from "netlify-cms-media-library-uploadcare";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 
+import YoutubeIframeEditor from './customWidgets/YoutubeIframeEditor'
 import DocumentsPagePreview from "./preview-templates/DocumentsPagePreview";
 import PostPreview from "./preview-templates/PostPreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
@@ -24,6 +25,7 @@ CMS.moment.locale('pl', locale)
 CMS.registerLocale("pl", pl);
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
+CMS.registerEditorComponent(YoutubeIframeEditor);
 
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("documents", DocumentsPagePreview);
