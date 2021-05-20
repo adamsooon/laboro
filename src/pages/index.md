@@ -1,22 +1,20 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Dajemy szanse na lepsze życie
 image: /img/header.jpg
-heading: Great coffee with a conscience
+heading: Great coffee with a consciencess
 mainpitch:
   title: Fundacja Laboro
   description: >
-    Tutaj niedługi tekst, który zainteresuje użytkownika, aby kliknął w button lub wszedł
-    w stronę "O nas".
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+    Tutaj niedługi tekst, który zainteresuje użytkownika, aby kliknął w button
+    lub wszedł w stronę "O nas". Kaldi is the coffee store for everyone who
+    believes that great coffee shouldn't just taste good, it should do good too.
+    We source all of our beans directly from small scale sustainable farmers and
+    make sure part of the profits are reinvested in their communities.
+contactData:
+  phone: 579 634 849
+  email: laboro@poczta.fm
+  address: Białystok, ul Kolejowa 12B, lokal 5 (I piętro)
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -68,8 +66,8 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
-contactData:
-  phone: "579 634 849"
-  email: "laboro@poczta.fm"
-  address: "Białystok, ul Kolejowa 12B, lokal 5 (I piętro)"
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 ---
