@@ -39,9 +39,8 @@ export const contactsPageNav = {
 
 export const privatePolicyNav = {
   name: "Polityka Prywatności",
-  path: "/static/polityka_prywatnosci.pdf",
+  path: "/polityka-prywatnosci",
   destinations: [FOOTER],
-  isStaticLink: true
 };
 
 export const navigationItems = [

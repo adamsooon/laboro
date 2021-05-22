@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import DataPageTemplate from "../components/DataPageTemplate";
 import { HTMLContent } from "../components/Content";
-import DataPageTemplate from "../components/DataPageTemplate"
 
-const AboutPage = ({ data, location }) => {
+function PrivatePolicyPage({ data, location }) {
   const { markdownRemark: post } = data;
 
   return (
@@ -15,20 +15,21 @@ const AboutPage = ({ data, location }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
-        helmet={<Helmet titleTemplate="%s | O nas" />}
+        helmet={<Helmet titleTemplate="%s | Polityka Prywatności" />}
       />
     </Layout>
   );
-};
+}
 
-AboutPage.propTypes = {
+PrivatePolicyPage.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
-export default AboutPage;
+export default PrivatePolicyPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const PrivatePolicyPageQuery = graphql`
+  query PrivatePolicyPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

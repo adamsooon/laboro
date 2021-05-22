@@ -34,7 +34,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "news-post"}
-      - {label: "Tytuł", name: "title", widget: "string"}
+      - {label: "Nagłówek", name: "title", widget: "string"}
       - {label: "Data publikacji", name: "date", widget: "datetime"}
       - {label: "Opis", name: "description", widget: "text"}
       - {label: "Wyróżniony obraz", name: "featuredimage", widget: image, default: '/img/paper.jpg'}
@@ -48,12 +48,9 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", required: true, widget: "hidden", default: "index-page"}
-          - {label: Title, name: title, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Heading, name: heading, widget: string}
+          - {label: Nagłówek, name: title, widget: string}
+          - {label: Zdjęcie główne, name: image, widget: image}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Description, name: description, widget: string}
-          # - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
           # - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
           - {label: Dane Kontaktowe, name: contactData, widget: object, fields: [{ label: Telefon, name: phone, widget: string }, { label: E-nail, name: email, widget: string }, { label: Adres, name: address, widget: string }]}
       - file: "src/pages/dokumenty/index.md"
@@ -69,6 +66,14 @@ collections:
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Nagłówek", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/polityka-prywatnosci/index.md"
+        label: "Polityka Prywatności"
+        name: "private-policy"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "private-policy-page"}
+          - {label: "Nagłówek", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
       

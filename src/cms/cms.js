@@ -7,7 +7,7 @@ import YoutubeIframeEditor from './customWidgets/YoutubeIframeEditor'
 import DocumentsPagePreview from "./preview-templates/DocumentsPagePreview";
 import PostPreview from "./preview-templates/PostPreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
-import AboutPagePreview from "./preview-templates/AboutPagePreview";
+import DataPagePreview from "./preview-templates/DataPagePreview";
 import moment from 'moment';
 import 'moment/locale/pl';
 
@@ -31,4 +31,5 @@ CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("documents", DocumentsPagePreview);
 CMS.registerPreviewTemplate("project", PostPreview);
 CMS.registerPreviewTemplate("news", PostPreview);
-CMS.registerPreviewTemplate("about", AboutPagePreview);
+CMS.registerPreviewTemplate("about", DataPagePreview);
+CMS.registerPreviewTemplate("private-policy", DataPagePreview);
