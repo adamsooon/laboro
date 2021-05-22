@@ -4,6 +4,7 @@ import { withPrefix } from "gatsby";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Contact from "../components/Contact";
+import CookiesBar from "../components/CookiesBar";
 import useSiteMetadata from "./SiteMetadata";
 import "../sass/all.sass";
 
@@ -56,6 +57,7 @@ const TemplateWrapper = ({ children, location }) => {
       <div className="app">{children}</div>
       <Contact />
       <Footer facebookUrl={facebookUrl} />
+      <CookiesBar />
     </div>
   );
 };

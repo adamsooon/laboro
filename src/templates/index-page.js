@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-// import Features from "../components/Features";
 import PostRoll from "../components/posts/PostsRoll";
 
 export const IndexPageTemplate = ({
@@ -39,7 +38,6 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    {/* <Features gridItems={intro.blurbs} /> */}
     <section className="section projects">
       <div className="container">
         <div className="column is-12">

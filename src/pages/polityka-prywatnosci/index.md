@@ -19,7 +19,7 @@ W razie jakichkolwiek wątpliwości związanych z polityką prywatności, w każ
 Dbam o Twoją prywatność, ale również o Twój czas. Dlatego przygotowałem dla Ciebie skróconą wersję najważniejszych zasad związanych z ochroną prywatności.
 
 * Nikomu nie powierzamy przetwarzanych przez nas danych osobowych.
-* Osadzamy na stronie mapę Google i nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube i Google Maps.
+* Osadzamy na stronie mapę Google i nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania lub przeglądasz mapę wykorzystywane są pliki cookies firmy Google LLC dotyczące usług YouTube i Google Maps.
 * Zapewniamy możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratora serwisu społecznościowego Facebook.
 * Wykorzystujemy pliki cookies własne w celu prawidłowego działania strony.
 
@@ -48,7 +48,7 @@ Przysługuje Ci prawo do zwrócenia się do nas z żądaniem udostępnienia Ci i
 
 #### Bezpieczeństwo
 
-Gwarantujemy Ci poufność wszelkich przekazanych mi danych osobowych. Zapewniam podjęcie wszelkich środków bezpieczeństwa i ochrony danych osobowych wymaganych przez przepisy o ochronie danych osobowych. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione.
+Gwarantujemy Ci poufność wszelkich przekazanych nam danych osobowych. Zapewniam podjęcie wszelkich środków bezpieczeństwa i ochrony danych osobowych wymaganych przez przepisy o ochronie danych osobowych. Dane osobowe są gromadzone z należytą starannością i odpowiednio chronione przed dostępem do nich przez osoby do tego nieupoważnione.
 
 ### Cele i czynności przetwarzania
 

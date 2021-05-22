@@ -6,7 +6,6 @@ $kaldi-red: #D64000
 $kaldi-red-invert: #fff
 $link: #f4792b
 
-$primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
 $body-color: #333
 $black: #2b2523
@@ -37,9 +36,7 @@ $black: #2b2523
   line-height: 1
   color: white
   background-color: $link
-
-.navbar-item .icon
-  color: $primary
+  
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
@@ -84,6 +81,16 @@ $menu-label-color: $white-ter
   display: flex
 
 @import "~bulma"
+
+.is-hero-cookies
+  position: fixed
+  bottom: 0
+  width: 100%
+  font-size: 14px
+  text-align: center
+  background-color: black
+  color: white
+  z-index: 1
 
 .social-menu-like
   height: 65px
