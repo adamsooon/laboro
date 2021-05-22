@@ -2,15 +2,15 @@
 templateKey: private-policy-page
 title: Polityka prywatności i plików cookies
 ---
-Administratorem strony i danych osobowych jest:
+## Administratorem strony i danych osobowych jest:
 
-**Fundacja Laboro**\
-**ul. HANKI ORDONÓWNY 4/54\
+Fundacja Laboro\
+ul. Hanki Ordonówny 4/54\
 15-750 BIAŁYSTOK\
-NIP: 9662105079**\
-**REGON: 364906081**
+NIP: 9662105079\
+REGON: 364906081
 
-W razie jakichkolwiek wątpliwości związanych z polityką prywatności, w każdej chwili możesz skontaktować się z nami, wysyłając wiadomość na adres e-mail [laboro@poczta.fm](laboro@poczta.fm).
+W razie jakichkolwiek wątpliwości związanych z polityką prywatności, w każdej chwili możesz skontaktować się z nami, wysyłając wiadomość na adres e-mail [laboro@poczta.fm](mailto:laboro@poczta.fm).
 
 
 
@@ -19,8 +19,8 @@ W razie jakichkolwiek wątpliwości związanych z polityką prywatności, w każ
 Dbam o Twoją prywatność, ale również o Twój czas. Dlatego przygotowałem dla Ciebie skróconą wersję najważniejszych zasad związanych z ochroną prywatności.
 
 * Nikomu nie powierzamy przetwarzanych przez nas danych osobowych.
-* Osadzamy na stronie nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube.
-* Zapewniamy możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratorów serwisów społecznościowych takich jak Facebook oraz Twitter.
+* Osadzamy na stronie mapę Google i nagrania wideo z serwisu YouTube. Gdy odtwarzasz takie nagrania, wykorzystywane są pliki cookies firmy Google LLC dotyczące usługi YouTube i Google Maps.
+* Zapewniamy możliwość korzystania z funkcji społecznościowych, takich jak udostępnianie treści w serwisach społecznościowych oraz subskrypcja profilu społecznościowego. Korzystanie z tych funkcji wiąże się z wykorzystywaniem plików cookies administratora serwisu społecznościowego Facebook.
 * Wykorzystujemy pliki cookies własne w celu prawidłowego działania strony.
 
 ## Szczegółowe informacje
@@ -44,7 +44,7 @@ RODO przyznaje Ci następujące potencjalne uprawnienia związane z przetwarzani
 
 Zasady związane z realizacją wskazanych uprawnień zostały opisane szczegółowo w art. 16 – 21 RODO. Zachęcamy do zapoznania się z tymi przepisami. Uważamy za potrzebne wyjaśnić Ci, że wskazane powyżej uprawnienia nie są bezwzględne i nie będą przysługiwać Ci w stosunku do wszystkich czynności przetwarzania Twoich danych osobowych. Dla Twojej wygody dołożyłem starań, by w ramach opisu poszczególnych operacji przetwarzania danych osobowych wskazać na przysługujące Ci w ramach tych operacji uprawnienia.
 
-Przysługuje Ci prawo do zwrócenia się do nas z żądaniem udostępnienia Ci informacji o tym, jakie dane na Twój temat posiadamy oraz w jakich celach je przetwarzamy. Wystarczy, że wyślesz wiadomość e-mail na adres [laboro@poczta.fm](laboro@poczta.fm)[](mailto:kontakt@nafrontendzie.pl). Dołożyliśmy jednak wszelkich starań, by interesujące Cię informacje zostały wyczerpująco przedstawione w niniejszej polityce prywatności. Podany powyżej adres e-mail możesz wykorzystać również w razie jakichkolwiek pytań związanych z przetwarzaniem Twoich danych osobowych.
+Przysługuje Ci prawo do zwrócenia się do nas z żądaniem udostępnienia Ci informacji o tym, jakie dane na Twój temat posiadamy oraz w jakich celach je przetwarzamy. Wystarczy, że wyślesz wiadomość e-mail na adres [laboro@poczta.fm](mailto:laboro@poczta.fm). Dołożyliśmy jednak wszelkich starań, by interesujące Cię informacje zostały wyczerpująco przedstawione w niniejszej polityce prywatności. Podany powyżej adres e-mail możesz wykorzystać również w razie jakichkolwiek pytań związanych z przetwarzaniem Twoich danych osobowych.
 
 #### Bezpieczeństwo
 
@@ -58,11 +58,11 @@ Poniżej przedstawiono wszystkie cele oraz czynności przetwarzania Twoich danyc
 
 Kontaktując się z nami za pośrednictwem poczty elektronicznej w sposób naturalny przekazujesz nam swój adres e-mail jako adres nadawcy wiadomości. Ponadto, w treści wiadomości możesz zawrzeć również inne dane osobowe.
 
-Twoje dane są w tym przypadku przetwarzane w celu kontaktu z Tobą, a podstawą przetwarzania jest art. 6 ust. 1 lit. a RODO, czyli Twoja zgoda wynikająca z zainicjowania ze mną kontaktu. Podstawą prawną przetwarzania po zakończeniu kontaktu jest usprawiedliwiony cel w postaci archiwizacji korespondencji na potrzeby wewnętrzne (art. 6 ust. 1 lit. c RODO).
+Twoje dane są w tym przypadku przetwarzane w celu kontaktu z Tobą, a podstawą przetwarzania jest art. 6 ust. 1 lit. a RODO, czyli Twoja zgoda wynikająca z zainicjowania z nami kontaktu. Podstawą prawną przetwarzania po zakończeniu kontaktu jest usprawiedliwiony cel w postaci archiwizacji korespondencji na potrzeby wewnętrzne (art. 6 ust. 1 lit. c RODO).
 
-Treść korespondencji może podlegać archiwizacji i nie jesteśmy w stanie jednoznacznie określić, kiedy zostanie usunięta. Masz prawo do domagania się przedstawienia historii korespondencji, jaką ze mną prowadziłeś (jeżeli podlegała archiwizacji), jak również domagać się jej usunięcia, chyba że jej archiwizacja jest uzasadniona z uwagi na moje nadrzędne interesy, np. obrona przed potencjalnymi roszczeniami z Twojej strony.
+Treść korespondencji może podlegać archiwizacji i nie jesteśmy w stanie jednoznacznie określić, kiedy zostanie usunięta. Masz prawo do domagania się przedstawienia historii korespondencji, jaką z nami prowadziłeś (jeżeli podlegała archiwizacji), jak również domagać się jej usunięcia, chyba że jej archiwizacja jest uzasadniona z uwagi na nasze nadrzędne interesy, np. obrona przed potencjalnymi roszczeniami z Twojej strony.
 
-#### Pliki cookies, local storage i session storage (dalej nazywane jako cookies)
+#### Pliki cookies, local storage i session storage (dalej zwane jako cookies)
 
 Nasza strona, podobnie jak niemal wszystkie inne strony internetowe, wykorzystuje pliki cookies, by zapewnić Ci najlepsze doświadczenia związane z korzystaniem z niej.
 
