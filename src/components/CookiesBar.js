@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 
 function CookiesBar() {
-  const [isHidden, setHidden] = useState(false);
+  const [isHidden, setHidden] = useState(true);
 
   const handleClick = () => {
     setHidden(true);
