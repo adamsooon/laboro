@@ -6,7 +6,7 @@ function CookiesBar() {
     if (typeof window !== "undefined" && window) {
       return localStorage.getItem("isCookieApproved", false)
     }
-    return false
+    return true
   });
 
   const handleClick = () => {
