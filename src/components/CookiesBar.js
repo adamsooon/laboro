@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 
 function CookiesBar() {
-  const [isHidden, setHidden] = useState(true);
+  const [isHidden, setHidden] = useState(() => {
+    if (typeof window !== "undefined" && window) {
+      return localStorage.getItem("isCookieApproved", false)
+    }
+    return false
+  });
 
   const handleClick = () => {
     setHidden(true);
     localStorage.setItem("isCookieApproved", true);
   };
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window) {
-      setHidden(localStorage.getItem("isCookieApproved", false));
-    }
-  }, []);
 
   if (isHidden) {
     return null;
