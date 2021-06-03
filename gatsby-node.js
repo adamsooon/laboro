@@ -39,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/views/${String(edge.node.frontmatter.templateKey)}.js`
         ),
         // additional data can be passed via context
         context: {
@@ -55,7 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
     Array.from({ length: projectsNumPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/projekty` : `/projekty/${i + 1}`,
-        component: path.resolve("./src/templates/project-posts-page.js"),
+        component: path.resolve("./src/views/project-posts-page.js"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
@@ -68,7 +68,7 @@ exports.createPages = ({ actions, graphql }) => {
     Array.from({ length: newsNumPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/aktualnosci` : `/aktualnosci/${i + 1}`,
-        component: path.resolve("./src/templates/news-posts-page.js"),
+        component: path.resolve("./src/views/news-posts-page.js"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
@@ -96,7 +96,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       createPage({
         path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
+        component: path.resolve(`src/views/tags.js`),
         context: {
           tag,
         },
