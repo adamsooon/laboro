@@ -8,7 +8,7 @@ import CookiesBar from "../components/CookiesBar";
 import useSiteMetadata from "./SiteMetadata";
 import "../sass/all.sass";
 
-const TemplateWrapper = ({ children, location }) => {
+const TemplateWrapper = ({ children }) => {
   const { title, description, facebookUrl, domain } = useSiteMetadata();
 
   return (
@@ -53,7 +53,7 @@ const TemplateWrapper = ({ children, location }) => {
         />
       </Helmet>
 
-      <Navbar location={location} facebookUrl={facebookUrl} />
+      <Navbar facebookUrl={facebookUrl} />
       <div className="app">{children}</div>
       <Contact />
       <Footer facebookUrl={facebookUrl} />

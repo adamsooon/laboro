@@ -6,11 +6,11 @@ import Layout from "../components/Layout";
 import { HTMLContent } from "../components/Content";
 import DataPageTemplate from "../components/DataPageTemplate"
 
-const AboutPage = ({ data, location }) => {
+const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <DataPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { Link } from "gatsby";
 
-export default function NavItem({ item, location }) {
+export default function NavItem({ item }) {
   const { isStaticLink, name, path } = item;
   if (isStaticLink) {
     return (
@@ -19,9 +18,8 @@ export default function NavItem({ item, location }) {
   }
   return (
     <Link
-      className={classNames("navbar-item", {
-        "is-active": location?.pathname === path,
-      })}
+      className="navbar-item"
+      activeClassName="is-active"
       to={path}
     >
       {name}
@@ -31,5 +29,4 @@ export default function NavItem({ item, location }) {
 
 NavItem.propTypes = {
   item: PropTypes.object.isRequired,
-  location: PropTypes.object
 }

@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import DocumentsPageTemplate from "../templates/DocumentsPageTemplate";
 
-function DocumentsPage({ data, location }) {
+function DocumentsPage({ data }) {
   const {
     markdownRemark: {
       frontmatter: { documents, header, image },
@@ -13,7 +13,7 @@ function DocumentsPage({ data, location }) {
   } = data;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <DocumentsPageTemplate
         documents={documents}
         image={image}
@@ -26,7 +26,6 @@ function DocumentsPage({ data, location }) {
 
 DocumentsPage.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default DocumentsPage;

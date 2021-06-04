@@ -7,12 +7,12 @@ import SinglePostTemplate from "../components/posts/SinglePostTemplate";
 import { HTMLContent } from "../components/Content";
 import useSiteMetadata from "../components/SiteMetadata";
 
-const ProjectPost = ({ data, location }) => {
+const ProjectPost = ({ data }) => {
   const { domain } = useSiteMetadata();
   const { markdownRemark: post } = data;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <SinglePostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -39,7 +39,6 @@ ProjectPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-  location: PropTypes.object,
 };
 
 export default ProjectPost;
