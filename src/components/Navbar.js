@@ -7,7 +7,7 @@ import facebook from "../img/social/facebook.svg";
 import logo from "../img/logo.svg";
 import { navigationItems, NAVBAR } from "../constants/navigationItems";
 
-function Navbar({ facebookUrl, location }) {
+function Navbar({ facebookUrl }) {
   const [isActive, setActive] = useState(false);
 
   const toggleHamburger = useCallback(() => {
@@ -51,7 +51,7 @@ function Navbar({ facebookUrl, location }) {
             {navigationItems
               .filter(({ destinations }) => destinations.includes(NAVBAR))
               .map((item) => (
-                <NavItem item={item} location={location} key={v4()} />
+                <NavItem item={item} key={v4()} />
               ))}
           </div>
           <div className="navbar-end has-text-centered">

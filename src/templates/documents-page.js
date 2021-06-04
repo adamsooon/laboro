@@ -33,7 +33,7 @@ DocumentsPageTemplate.propTypes = {
   image: PropTypes.object.isRequired,
 };
 
-function DocumentsPage({ data, location }) {
+function DocumentsPage({ data }) {
   const {
     markdownRemark: {
       frontmatter: { documents, header, image },
@@ -41,7 +41,7 @@ function DocumentsPage({ data, location }) {
   } = data;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <DocumentsPageTemplate
         documents={documents}
         image={image}
@@ -54,7 +54,6 @@ function DocumentsPage({ data, location }) {
 
 DocumentsPage.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default DocumentsPage;

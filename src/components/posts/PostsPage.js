@@ -7,9 +7,9 @@ import Header from "../Header";
 import PostsRoll from "./PostsRoll";
 import Pagination from "./Pagination";
 
-export default function PostsPage({ data, location, title, paginationData }) {
+export default function PostsPage({ data, title, paginationData }) {
   return (
-    <Layout location={location}>
+    <Layout>
       <Helmet titleTemplate={`%s | ${title}`} />
       <Header image={data.image} title={title} />
       <section className="section">
@@ -27,6 +27,5 @@ export default function PostsPage({ data, location, title, paginationData }) {
 PostsPage.propTypes = {
   data: PropTypes.object,
   helmet: PropTypes.object,
-  location: PropTypes.object,
   title: PropTypes.string,
 };

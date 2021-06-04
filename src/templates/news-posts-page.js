@@ -3,12 +3,11 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import PostsPage from "../components/posts/PostsPage";
 
-export default function NewsIndexPage({ data, location, pageContext }) {
+export default function NewsIndexPage({ data, pageContext }) {
   return (
     <PostsPage
       title="Aktualności"
       data={data}
-      location={location}
       paginationData={pageContext}
     />
   );
@@ -16,7 +15,6 @@ export default function NewsIndexPage({ data, location, pageContext }) {
 
 NewsIndexPage.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object,
 };
 
 export const pageQuery = graphql`

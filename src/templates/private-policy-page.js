@@ -6,11 +6,11 @@ import Layout from "../components/Layout";
 import DataPageTemplate from "../components/DataPageTemplate";
 import { HTMLContent } from "../components/Content";
 
-function PrivatePolicyPage({ data, location }) {
+function PrivatePolicyPage({ data }) {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <DataPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
@@ -22,8 +22,7 @@ function PrivatePolicyPage({ data, location }) {
 }
 
 PrivatePolicyPage.propTypes = {
-  data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
 
 export default PrivatePolicyPage;
