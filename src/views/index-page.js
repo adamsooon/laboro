@@ -5,11 +5,11 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import IndexPageTemplate from '../templates/IndexPageTemplate';
 
-const IndexPage = ({ data, location }) => {
+const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -24,7 +24,6 @@ const IndexPage = ({ data, location }) => {
 };
 
 IndexPage.propTypes = {
-  location: PropTypes.object,
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
