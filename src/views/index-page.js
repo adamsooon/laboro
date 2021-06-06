@@ -33,38 +33,35 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const pageQuery = graphql`
-  query IndexPageTemplate($limit: Int = 3) {
-    projects: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "project-post" } } }
-      limit: $limit
-    ) {
-      ...PostsList
-    }
-    news: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "news-post" } } }
-      limit: $limit
-    ) {
-      ...PostsList
-    }
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
+export const pageQuery = graphql`query IndexPageTemplate($limit: Int = 3) {
+  projects: allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {frontmatter: {templateKey: {eq: "project-post"}}}
+    limit: $limit
+  ) {
+    ...PostsList
+  }
+  news: allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {frontmatter: {templateKey: {eq: "news-post"}}}
+    limit: $limit
+  ) {
+    ...PostsList
+  }
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
+        }
+      }
+      mainpitch {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        mainpitch {
-          title
-          description
-        }
         description
       }
+      description
     }
   }
+}
 `;

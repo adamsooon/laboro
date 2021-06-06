@@ -30,25 +30,22 @@ DocumentsPage.propTypes = {
 
 export default DocumentsPage;
 
-export const pageQuery = graphql`
-  query DocumentsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "documents-page" } }) {
-      frontmatter {
-        header
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+export const pageQuery = graphql`query DocumentsPageTemplate {
+  markdownRemark(frontmatter: {templateKey: {eq: "documents-page"}}) {
+    frontmatter {
+      header
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 90, layout: FULL_WIDTH)
         }
-        documents {
-          file {
-            publicURL
-          }
-          documentName
+      }
+      documents {
+        file {
+          publicURL
         }
+        documentName
       }
     }
   }
+}
 `;

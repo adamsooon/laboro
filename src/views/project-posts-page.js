@@ -17,22 +17,19 @@ ProjectIndexPage.propTypes = {
   data: PropTypes.object,
 };
 
-export const pageQuery = graphql`
-  query ProjectIndexPage($skip: Int!, $limit: Int!) {
-    image: file(relativePath: { eq: "projects-bg.webp" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1280) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    projects: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "project-post" } } }
-      limit: $limit
-      skip: $skip
-    ) {
-      ...PostsList
+export const pageQuery = graphql`query ProjectIndexPage($skip: Int!, $limit: Int!) {
+  image: file(relativePath: {eq: "projects-bg.webp"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+  projects: allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {frontmatter: {templateKey: {eq: "project-post"}}}
+    limit: $limit
+    skip: $skip
+  ) {
+    ...PostsList
+  }
+}
 `;
