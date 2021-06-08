@@ -1,21 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import BackgroundImage from "gatsby-background-image";
+import { BgImage } from 'gbimage-bridge';
 
 export default function Header({ image, isFixed, title, style }) {
   return (
-    <BackgroundImage
+    <BgImage
       Tag={`header`}
       className={classNames("full-width-image", {
         "is-fixed": isFixed,
       })}
-      fluid={!!image.childImageSharp ? image.childImageSharp.fluid : image}
+      image={!!image.childImageSharp ? image.childImageSharp.gatsbyImageData : image}
     >
       <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen header-title">
         {title}
       </h1>
-    </BackgroundImage>
+    </BgImage>
   );
 }
 

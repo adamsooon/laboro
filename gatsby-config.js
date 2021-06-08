@@ -53,8 +53,19 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['webp'],
+          placeholder: 'blurred',
+          quality: 90,
+          backgroundColor: `transparent`
+        }
+      }
+    },
     "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
     {
       resolve: "gatsby-transformer-remark",
       options: {

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DocumentsPageTemplate } from "../../templates/documents-page";
+import DocumentsPageTemplate from "../../templates/DocumentsPageTemplate";
 
 const DocumentsPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS();

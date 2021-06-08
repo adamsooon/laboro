@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Link } from "gatsby";
 
 function CookiesBar() {
@@ -38,4 +38,4 @@ function CookiesBar() {
   );
 }
 
-export default CookiesBar;
+export default memo(CookiesBar);

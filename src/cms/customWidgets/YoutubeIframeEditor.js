@@ -1,4 +1,4 @@
-export default {
+const YoutubeIframeEditor = {
   id: "youtube",
   label: "Youtube",
   fields: [{ name: "id", label: "Youtube Video ID", widget: "string" }],
@@ -16,3 +16,5 @@ export default {
     return `<iframe src="//www.youtube.com/embed/${obj.id}" class="content-youtube" frameborder="0" allowfullscreen></iframe>`;
   },
 };
+
+export default YoutubeIframeEditor;
