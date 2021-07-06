@@ -42,19 +42,23 @@ export const IndexPageTemplate = ({
       <div className="container">
         <div className="column is-12">
           <div className="content">
-            <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
-              Najnowsze aktualności
-            </h3>
-            <PostRoll projects={news} />
-            <div className="column is-12 has-text-centered">
-              <Link
-                className="btn"
-                to="/aktualnosci"
-                aria-label="Zobacz więcej aktualności"
-              >
-                Zobacz więcej
-              </Link>
-            </div>
+            {Boolean(news.edges.length) && (
+              <>
+                <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
+                  Najnowsze aktualności
+                </h3>
+                <PostRoll projects={news} />
+                <div className="column is-12 has-text-centered">
+                  <Link
+                    className="btn"
+                    to="/aktualnosci"
+                    aria-label="Zobacz więcej aktualności"
+                  >
+                    Zobacz więcej
+                  </Link>
+                </div>
+              </>
+            )}
             <h3 className="has-text-weight-semibold is-size-2 has-text-centered">
               Ostatnio dodane projekty
             </h3>
