@@ -5,11 +5,7 @@ image: /img/header.jpg
 mainpitch:
   title: Fundacja Laboro
   description: >
-    Tutaj niedługi tekst, który zainteresuje użytkownika, aby kliknął w button
-    lub wszedł w stronę "O nas". Kaldi is the coffee store for everyone who
-    believes that great coffee shouldn't just taste good, it should do good too.
-    We source all of our beans directly from small scale sustainable farmers and
-    make sure part of the profits are reinvested in their communities.
+    Fundacja Laboro powstała w lipcu 2016 r. jako inicjatywa osób od wielu lat zawodowo zajmujących się problematyką osób z niepełnosprawnościami. Przyświecała nam idea prowadzenia działań, które stanowić będą uzupełnienie istniejącego już lokalnie systemu wsparcia osób niesamodzielnych, ze szczególnym uwzględnieniem tematyki profilaktyki zdrowia psychicznego i przeciwdziałania wykluczeniu społecznemu
 contactData:
   phone: 579 634 849
   email: laboro@poczta.fm
